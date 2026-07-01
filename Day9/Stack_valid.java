@@ -1,0 +1,24 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Stack_valid {
+    public static void main(String[] args) {
+        int n=5;
+        int[] pushed = {1,2,3,4,5};
+        int[] popped = {4,5,3,2,1};
+        Stack<Integer> s = new Stack<>();
+        int index =0;
+        for(int i =0;i<n;i++){
+            s.push(pushed[i]);
+            while(!s.isEmpty() && s.peek() == popped[index]){
+                s.pop();
+                index++;
+            }
+        }
+        if(s.isEmpty()){
+            System.out.print("True");
+        }else{
+            System.out.print("False");
+        }
+    }
+}
